@@ -1,25 +1,58 @@
 .nav-link {
  position: relative;
- transition: color 0.3s ease;
+ text-decoration: none;
 }
 
 .nav-link::after {
  content: '';
  position: absolute;
- bottom: -5px;
+ bottom: -2px;
  left: 0;
- width: 0;
+ width: 100%;
  height: 2px;
- background: #ffffff;
- transition: width 0.3s ease;
+ background: black;
+ transform: scaleX(0);
+ transition: transform 0.3s ease;
 }
 
 .nav-link:hover::after {
- width: 100%;
+ transform: scaleX(1);
 }
 
-.mobile-menu {
- transition: max-height 0.3s ease-out;
+
+#main-nav.scrolled .nav-link::after {
+ background: white;
+}
+
+
+
+#mobile-menu {
+ background-color: transparent;
+ transition: background-color 0.3s ease;
+}
+
+#main-nav.scrolled #mobile-menu {
+ background-color: rgba(239, 68, 68, 0.2);
+}
+
+/* Mobile Menu Links */
+#mobile-menu a {
+ color: black;
+ transition: color 0.3s ease;
+}
+
+#main-nav.scrolled #mobile-menu a {
+ color: white;
+}
+
+
+#mobile-menu-button {
+ color: black;
+ transition: color 0.3s ease;
+}
+
+#main-nav.scrolled #mobile-menu-button {
+ color: white;
 }
 
 .modal-overlay {
@@ -53,4 +86,35 @@
 .success-active .success-message {
  opacity: 1;
  transform: scale(1);
+}
+
+
+#main-nav {
+ background-color: transparent;
+ transition: background-color 0.3s ease;
+}
+
+
+#main-nav.scrolled {
+ background-color: rgba(239, 68, 68, 0.8);
+}
+
+
+#logo {
+ filter: brightness(0);
+}
+
+#main-nav.scrolled #logo {
+ filter: brightness(1);
+}
+
+
+#main-nav .nav-link {
+ color: black;
+ transition: color 0.3s ease;
+}
+
+
+#main-nav.scrolled .nav-link {
+ color: white;
 }

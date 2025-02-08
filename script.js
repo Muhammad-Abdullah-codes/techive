@@ -115,3 +115,18 @@ closeModalBtn.addEventListener('click', () => {
  setTimeout(() => modal.classList.add('hidden'), 300);
 });
 
+document.addEventListener('scroll', function () {
+ const nav = document.getElementById('main-nav');
+ const logo = document.getElementById('logo');
+ const heroSection = document.getElementById('home'); // Ensure your hero section has the ID 'hero'
+
+ if (heroSection) {
+  const heroHeight = heroSection.offsetHeight;
+
+  if (window.scrollY > heroHeight) {
+   nav.classList.add('scrolled');
+  } else {
+   nav.classList.remove('scrolled');
+  }
+ }
+});

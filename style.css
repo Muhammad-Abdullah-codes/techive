@@ -1,0 +1,56 @@
+.nav-link {
+ position: relative;
+ transition: color 0.3s ease;
+}
+
+.nav-link::after {
+ content: '';
+ position: absolute;
+ bottom: -5px;
+ left: 0;
+ width: 0;
+ height: 2px;
+ background: #ffffff;
+ transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+ width: 100%;
+}
+
+.mobile-menu {
+ transition: max-height 0.3s ease-out;
+}
+
+.modal-overlay {
+ opacity: 0;
+ visibility: hidden;
+ transition: all 0.3s ease-in-out;
+}
+
+.modal-content {
+ opacity: 0;
+ transform: translateY(-20px);
+ transition: all 0.3s ease-in-out;
+}
+
+.modal-active .modal-overlay {
+ opacity: 1;
+ visibility: visible;
+}
+
+.modal-active .modal-content {
+ opacity: 1;
+ transform: translateY(0);
+}
+
+.success-message {
+ opacity: 0;
+ transform: scale(0.8);
+ transition: all 0.3s ease-in-out;
+}
+
+.success-active .success-message {
+ opacity: 1;
+ transform: scale(1);
+}
